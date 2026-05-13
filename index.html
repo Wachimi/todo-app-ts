@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App TypeScript ✅</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- NAGŁÓWEK -->
+      <header class="app-header">
+        <div class="header-top">
+          <h1>✅ To-Do App</h1>
+          <span class="ts-badge">TypeScript</span>
+        </div>
+        <p class="header-subtitle">Zarządzaj zadaniami efektywnie</p>
+      </header>
+
+      <!-- DODAWANIE ZADANIA -->
+      <div class="add-section">
+        <div class="add-input-row">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Co masz do zrobienia?"
+            maxlength="100"
+            autocomplete="off"
+          />
+          <button id="addBtn" class="btn btn-primary">Dodaj</button>
+        </div>
+        <div class="add-options">
+          <select id="prioritySelect" class="priority-select">
+            <option value="low">🟢 Niski priorytet</option>
+            <option value="medium" selected>🟡 Średni priorytet</option>
+            <option value="high">🔴 Wysoki priorytet</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- STATYSTYKI -->
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-value" id="totalCount">0</span>
+          <span class="stat-label">Wszystkich</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="activeCount">0</span>
+          <span class="stat-label">Aktywnych</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="completedCount">0</span>
+          <span class="stat-label">Ukończonych</span>
+        </div>
+      </div>
+
+      <!-- FILTRY -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Wszystkie</button>
+        <button class="filter-btn" data-filter="active">Aktywne</button>
+        <button class="filter-btn" data-filter="completed">Ukończone</button>
+        <button class="filter-btn" data-filter="high">🔴 Wysokie</button>
+      </div>
+
+      <!-- LISTA ZADAŃ -->
+      <div id="tasksList" class="tasks-list"></div>
+
+      <!-- STOPKA -->
+      <footer class="app-footer">
+        <button id="clearCompletedBtn" class="btn btn-ghost">
+          🗑️ Usuń ukończone
+        </button>
+      </footer>
+    </div>
+
+    <script type="module" src="dist/app.js"></script>
+  </body>
+</html>
